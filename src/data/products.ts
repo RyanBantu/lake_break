@@ -1,5 +1,7 @@
 import tshirtHero from "@/assets/category-clothing.jpg";
 import tshirtWarmSpot from "@/assets/tshirt-warm-spot.png";
+import tshirtBirdLegsLifestyle from "@/assets/tshirt-bird-legs-lifestyle.png";
+import tshirtBirdLegsBack from "@/assets/tshirt-bird-legs-back.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
 
@@ -46,6 +48,19 @@ export const PRODUCTS: Product[] = [
       "Premium cotton crewneck with our original comic strip: two kids in the lake, one unforgettable punchline. Soft hand, durable print — wear it from the swim dock to the pizza place.",
     image: tshirtWarmSpot,
     gallery: [tshirtWarmSpot, tshirtHero],
+    sizes: ["S", "M", "L", "XL", "2XL"],
+  },
+  {
+    id: "tee-bird-legs",
+    slug: "bird-legs",
+    category: "t-shirts",
+    name: "Bird Legs",
+    priceCents: 2800,
+    summary: "Bird Legs Yacht Club — heron in shades on a seafoam tee.",
+    description:
+      "Seafoam crewneck with our navy “Bird Legs Yacht Club” back print: arched type, sunglasses-on-a-heron attitude, and script yacht-club finish. Soft cotton, lake-break certified — from the dock to the beach.",
+    image: tshirtBirdLegsBack,
+    gallery: [tshirtBirdLegsBack, tshirtBirdLegsLifestyle],
     sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {

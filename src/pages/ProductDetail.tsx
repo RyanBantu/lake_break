@@ -111,7 +111,7 @@ const ProductDetail = () => {
 
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }}>
             <p className="font-body text-[11px] font-bold tracking-[0.22em] uppercase text-primary mb-3">
-              Lake Break · SKU {product.id}
+              Lake Break · {product.id}
             </p>
             <h1 className="font-display text-3xl sm:text-4xl md:text-[2.75rem] text-foreground leading-[1.1]">
               {product.name}

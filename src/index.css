@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Metallic logo theme: charcoal + burnished gold */
+    --header-h: 8.75rem;
+    --background: 220 14% 7%;
+    --foreground: 40 25% 94%;
+
+    --card: 220 12% 11%;
+    --card-foreground: 40 25% 94%;
+
+    --popover: 220 12% 11%;
+    --popover-foreground: 40 25% 94%;
+
+    --primary: 38 42% 52%;
+    --primary-foreground: 220 18% 8%;
+
+    --secondary: 220 10% 14%;
+    --secondary-foreground: 40 25% 94%;
+
+    --muted: 220 10% 16%;
+    --muted-foreground: 40 12% 62%;
+
+    --accent: 38 38% 48%;
+    --accent-foreground: 220 18% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 38 22% 22%;
+    --input: 220 10% 18%;
+    --ring: 38 42% 52%;
+
+    --radius: 0.35rem;
+
+    --lake: 38 42% 52%;
+    --lake-light: 38 35% 68%;
+    --lake-dark: 32 36% 38%;
+    --sand: 220 10% 12%;
+    --sand-warm: 220 8% 15%;
+    --driftwood: 30 10% 48%;
+    --sunset: 28 55% 52%;
+    --sunset-glow: 35 60% 58%;
+    --foam: 40 30% 96%;
+
+    --font-display: 'Cormorant', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-billboard: 'Bebas Neue', Impact, sans-serif;
+
+    --sidebar-background: 220 14% 7%;
+    --sidebar-foreground: 40 25% 94%;
+    --sidebar-primary: 38 42% 52%;
+    --sidebar-primary-foreground: 220 18% 8%;
+    --sidebar-accent: 220 10% 14%;
+    --sidebar-accent-foreground: 40 25% 94%;
+    --sidebar-border: 38 22% 22%;
+    --sidebar-ring: 38 42% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-sunset {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--lake-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .type-caps-label {
+    @apply font-body text-[10px] sm:text-[11px] font-bold tracking-[0.22em] uppercase text-primary/85;
+  }
+
+  .beachy-shell {
+    box-shadow:
+      0 0 0 1px hsl(38 30% 28% / 0.35),
+      0 20px 50px -28px hsl(0 0% 0% / 0.55);
+  }
+
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+}

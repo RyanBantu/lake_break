@@ -4,7 +4,7 @@ import tshirtImg from "@/assets/category-clothing.jpg";
 import tshirtWarmSpotImg from "@/assets/tshirt-warm-spot.png";
 import mugProductImg from "@/assets/mug-fathers-day-product.png";
 import mugLifestyleImg from "@/assets/mug-fathers-day-lifestyle.png";
-import capStudioImg from "@/assets/cap-trucker-studio.png";
+import capStudioImg from "@/assets/cap-lake-break-studio.png";
 
 const MotionLink = motion(Link);
 
@@ -26,7 +26,7 @@ const categories = [
   {
     slug: "CAPS",
     name: "Caps",
-    description: "Trucker lids for the course, the dock, and the drive home",
+    description: "Mesh-back lids for the course, the dock, and the drive home",
     image: capStudioImg,
     to: "/shop/caps",
   },
@@ -34,7 +34,10 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section id="shop" className="py-16 md:py-24 px-0 md:px-4 bg-background border-y border-primary/15">
+    <section
+      id="shop"
+      className="py-16 md:py-24 px-0 md:px-4 bg-background border-y border-primary/15 scroll-mt-[calc(var(--header-h,8.75rem)+0.75rem)]"
+    >
       <div className="container mx-auto px-4 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 12 }}

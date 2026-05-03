@@ -123,7 +123,7 @@ const Navbar = () => {
                   {navLinks.map((link) => (
                     <li key={link.label}>
                       <Link
-                        to={link.label === "Shop" ? "/shop/t-shirts" : link.to}
+                        to={link.to}
                         className="flex min-h-[48px] items-center rounded-lg px-4 font-body text-sm font-semibold tracking-[0.14em] uppercase text-foreground active:bg-white/10"
                         onClick={() => setOpen(false)}
                       >

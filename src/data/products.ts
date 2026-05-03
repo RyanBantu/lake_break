@@ -3,9 +3,9 @@ import tshirtWarmSpot from "@/assets/tshirt-warm-spot.png";
 import tshirtBirdLegsLifestyle from "@/assets/tshirt-bird-legs-lifestyle.png";
 import tshirtBirdLegsBack from "@/assets/tshirt-bird-legs-back.png";
 import tshirtTrashyGulls from "@/assets/tshirt-dont-be-trashy-gulls.png";
-import capTruckerStudio from "@/assets/cap-trucker-studio.png";
-import capTruckerCollage from "@/assets/cap-trucker-collage.png";
-import capTruckerLifestyle from "@/assets/cap-trucker-lifestyle.png";
+import capLakeBreakStudio from "@/assets/cap-lake-break-studio.png";
+import capLakeBreakCollage from "@/assets/cap-lake-break-collage.png";
+import capLakeBreakLifestyle from "@/assets/cap-lake-break-lifestyle.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
 
@@ -40,7 +40,7 @@ export const CATEGORY_LABELS: Record<ShopCategoryId, { title: string; blurb: str
   },
   caps: {
     title: "Caps",
-    blurb: "Trucker lids with rope detail, mesh back, and our heron patch — golf course to gas dock.",
+    blurb: "Mesh-back lids with rope detail and our heron patch — golf course to gas dock.",
   },
 };
 
@@ -84,16 +84,16 @@ export const PRODUCTS: Product[] = [
     sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {
-    id: "cap-lake-break-trucker",
-    slug: "lake-break-trucker-cap",
+    id: "cap-lake-break",
+    slug: "lake-break-cap",
     category: "caps",
-    name: "Lake Break Trucker Cap",
+    name: "Lake Break Cap",
     priceCents: 3200,
-    summary: "White & tan trucker — seafoam patch, rope brim, snapback mesh.",
+    summary: "White & tan mesh-back hat — seafoam patch, rope brim, snap closure.",
     description:
-      "Structured trucker with a white foam front, tan mesh back, and braided rope at the brim. Hexagonal seafoam patch: heron in shades, L · B, and Lake Break type. LB hit on the side; snap closure and small woven tag at the back. One size fits most.",
-    image: capTruckerStudio,
-    gallery: [capTruckerStudio, capTruckerCollage, capTruckerLifestyle],
+      "Structured cap with a white foam front, tan mesh back, and braided rope at the brim. Hexagonal seafoam patch: heron in shades, L · B, and Lake Break type. LB hit on the side; snap closure and small woven tag at the back. One size fits most.",
+    image: capLakeBreakStudio,
+    gallery: [capLakeBreakStudio, capLakeBreakCollage, capLakeBreakLifestyle],
   },
   {
     id: "mug-bear-spot",

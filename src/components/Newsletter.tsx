@@ -6,7 +6,7 @@ const Newsletter = () => {
   return (
     <section
       id="contact"
-      className="py-20 md:py-24 px-4 bg-gradient-to-b from-background via-[hsl(220_12%_9%)] to-background border-y border-primary/15"
+      className="py-20 md:py-24 px-4 bg-gradient-to-b from-background via-[hsl(220_12%_9%)] to-background border-y border-primary/15 scroll-mt-[calc(var(--header-h,8.75rem)+0.75rem)]"
     >
       <motion.div
         initial={{ opacity: 0, y: 14 }}

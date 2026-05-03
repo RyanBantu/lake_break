@@ -2,6 +2,7 @@ import tshirtHero from "@/assets/category-clothing.jpg";
 import tshirtWarmSpot from "@/assets/tshirt-warm-spot.png";
 import tshirtBirdLegsLifestyle from "@/assets/tshirt-bird-legs-lifestyle.png";
 import tshirtBirdLegsBack from "@/assets/tshirt-bird-legs-back.png";
+import tshirtTrashyGulls from "@/assets/tshirt-dont-be-trashy-gulls.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
 
@@ -61,6 +62,18 @@ export const PRODUCTS: Product[] = [
       "Seafoam crewneck with our navy “Bird Legs Yacht Club” back print: arched type, sunglasses-on-a-heron attitude, and script yacht-club finish. Soft cotton, lake-break certified — from the dock to the beach.",
     image: tshirtBirdLegsBack,
     gallery: [tshirtBirdLegsBack, tshirtBirdLegsLifestyle],
+    sizes: ["S", "M", "L", "XL", "2XL"],
+  },
+  {
+    id: "tee-trashy-gulls",
+    slug: "dont-be-trashy-gulls",
+    category: "t-shirts",
+    name: "Don't Be Trashy, Gulls",
+    priceCents: 2800,
+    summary: "Sage crewneck — beach trash, three gulls with attitude, Lake Break sleeve hit.",
+    description:
+      "Soft sage-mint cotton tee with our full-back illustration: “Don’t be trashy, gulls.” around a very busy trash can, heart-shaped shades, pearls, and gull drama. Small Lake Break mark on the sleeve. Pack out what you pack in — just do it in style.",
+    image: tshirtTrashyGulls,
     sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {

@@ -17,7 +17,7 @@ const Footer = () => {
               Sun soaked days & campfire nights
             </p>
             <p className="font-body text-sm text-muted-foreground mt-4 leading-relaxed max-w-sm">
-              T-shirts and mugs for barefoot days, boardwalk nights, and every shade of summer.
+              T-shirts, mugs, and caps for barefoot days, boardwalk nights, and every shade of summer.
             </p>
           </div>
 
@@ -32,6 +32,11 @@ const Footer = () => {
               <li>
                 <Link to="/shop/mugs" className="hover:text-primary transition-colors">
                   Mugs
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop/caps" className="hover:text-primary transition-colors">
+                  Caps
                 </Link>
               </li>
             </ul>

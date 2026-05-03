@@ -3,10 +3,13 @@ import tshirtWarmSpot from "@/assets/tshirt-warm-spot.png";
 import tshirtBirdLegsLifestyle from "@/assets/tshirt-bird-legs-lifestyle.png";
 import tshirtBirdLegsBack from "@/assets/tshirt-bird-legs-back.png";
 import tshirtTrashyGulls from "@/assets/tshirt-dont-be-trashy-gulls.png";
+import capTruckerStudio from "@/assets/cap-trucker-studio.png";
+import capTruckerCollage from "@/assets/cap-trucker-collage.png";
+import capTruckerLifestyle from "@/assets/cap-trucker-lifestyle.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
 
-export type ShopCategoryId = "t-shirts" | "mugs";
+export type ShopCategoryId = "t-shirts" | "mugs" | "caps";
 
 export interface Product {
   id: string;
@@ -22,7 +25,7 @@ export interface Product {
   image: string;
   /** Extra images (detail page gallery) */
   gallery?: string[];
-  /** T-shirt sizes; omit for mugs */
+  /** T-shirt sizes; omit for mugs and caps */
   sizes?: string[];
 }
 
@@ -34,6 +37,10 @@ export const CATEGORY_LABELS: Record<ShopCategoryId, { title: string; blurb: str
   mugs: {
     title: "Mugs",
     blurb: "Ceramic mugs for campfire coffee, Father’s Day, and every morning that starts on the porch.",
+  },
+  caps: {
+    title: "Caps",
+    blurb: "Trucker lids with rope detail, mesh back, and our heron patch — golf course to gas dock.",
   },
 };
 
@@ -77,6 +84,18 @@ export const PRODUCTS: Product[] = [
     sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {
+    id: "cap-lake-break-trucker",
+    slug: "lake-break-trucker-cap",
+    category: "caps",
+    name: "Lake Break Trucker Cap",
+    priceCents: 3200,
+    summary: "White & tan trucker — seafoam patch, rope brim, snapback mesh.",
+    description:
+      "Structured trucker with a white foam front, tan mesh back, and braided rope at the brim. Hexagonal seafoam patch: heron in shades, L · B, and Lake Break type. LB hit on the side; snap closure and small woven tag at the back. One size fits most.",
+    image: capTruckerStudio,
+    gallery: [capTruckerStudio, capTruckerCollage, capTruckerLifestyle],
+  },
+  {
     id: "mug-bear-spot",
     slug: "i-see-a-bear-spot",
     category: "mugs",
@@ -91,7 +110,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export function getCategoryFromParam(param: string | undefined): ShopCategoryId | null {
-  if (param === "t-shirts" || param === "mugs") return param;
+  if (param === "t-shirts" || param === "mugs" || param === "caps") return param;
   return null;
 }
 

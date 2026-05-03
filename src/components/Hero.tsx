@@ -32,7 +32,7 @@ const Hero = () => {
               Coming soon
             </p>
             <p className="font-body mt-1.5 text-[11px] sm:text-xs md:text-sm text-[hsl(40_22%_92%)]/90 leading-snug font-medium">
-              Full checkout is on the way — preview tees &amp; mugs below.
+              Full checkout is on the way — preview tees, mugs &amp; caps below.
             </p>
             <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
           </div>
@@ -68,7 +68,7 @@ const Hero = () => {
             >
               <span className="font-body text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Preview</span>
               <span className="font-body text-sm font-semibold text-white mt-0.5 inline-flex items-center gap-0.5">
-                Tees &amp; mugs <ChevronRight className="h-4 w-4 shrink-0 opacity-75" aria-hidden />
+                Shop collection <ChevronRight className="h-4 w-4 shrink-0 opacity-75" aria-hidden />
               </span>
             </Link>
             <div className="snap-center shrink-0 w-[min(calc(100vw-2.25rem),19.5rem)] rounded-xl border border-white/10 bg-black/35 backdrop-blur-md px-3.5 py-2.5 ring-1 ring-white/5">

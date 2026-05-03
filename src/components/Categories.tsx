@@ -4,6 +4,7 @@ import tshirtImg from "@/assets/category-clothing.jpg";
 import tshirtWarmSpotImg from "@/assets/tshirt-warm-spot.png";
 import mugProductImg from "@/assets/mug-fathers-day-product.png";
 import mugLifestyleImg from "@/assets/mug-fathers-day-lifestyle.png";
+import capStudioImg from "@/assets/cap-trucker-studio.png";
 
 const MotionLink = motion(Link);
 
@@ -22,6 +23,13 @@ const categories = [
     image: mugProductImg,
     to: "/shop/mugs",
   },
+  {
+    slug: "CAPS",
+    name: "Caps",
+    description: "Trucker lids for the course, the dock, and the drive home",
+    image: capStudioImg,
+    to: "/shop/caps",
+  },
 ];
 
 const Categories = () => {
@@ -37,14 +45,14 @@ const Categories = () => {
         >
           <p className="type-caps-label mb-3">Shop</p>
           <h2 className="font-billboard text-4xl sm:text-5xl md:text-6xl text-foreground tracking-wide uppercase leading-none">
-            T-shirts &amp; mugs
+            T-shirts, mugs &amp; caps
           </h2>
           <p className="font-body text-muted-foreground mt-4 text-base md:text-lg">
-            Two staples — gear up or gift something that feels like the lake.
+            Tees, drinkware, and lids — gear up or gift something that feels like the lake.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px md:gap-0 max-w-5xl mx-auto bg-primary/20 md:bg-transparent">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px md:gap-0 max-w-6xl mx-auto bg-primary/20 md:bg-transparent">
           {categories.map((cat, i) => (
             <MotionLink
               key={cat.name}

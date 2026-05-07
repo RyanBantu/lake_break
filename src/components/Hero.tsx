@@ -32,7 +32,7 @@ const Hero = () => {
               Coming soon
             </p>
             <p className="font-body mt-1.5 text-[11px] sm:text-xs md:text-sm text-[hsl(40_22%_92%)]/90 leading-snug font-medium">
-              Full checkout is on the way — preview tees, mugs &amp; caps below.
+              Full checkout is on the way — preview tees, mugs &amp; hats below.
             </p>
             <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/35 to-transparent" />
           </div>

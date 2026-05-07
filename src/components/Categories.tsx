@@ -4,7 +4,7 @@ import tshirtImg from "@/assets/category-clothing.jpg";
 import tshirtWarmSpotImg from "@/assets/tshirt-warm-spot.png";
 import mugProductImg from "@/assets/mug-fathers-day-product.png";
 import mugLifestyleImg from "@/assets/mug-fathers-day-lifestyle.png";
-import capStudioImg from "@/assets/cap-lake-break-studio.png";
+import hatLakeDayClassicImg from "@/assets/hat-lake-day-classic.png";
 
 const MotionLink = motion(Link);
 
@@ -24,11 +24,11 @@ const categories = [
     to: "/shop/mugs",
   },
   {
-    slug: "CAPS",
-    name: "Caps",
+    slug: "HATS",
+    name: "Hats",
     description: "Mesh-back lids for the course, the dock, and the drive home",
-    image: capStudioImg,
-    to: "/shop/caps",
+    image: hatLakeDayClassicImg,
+    to: "/shop/hats",
   },
 ];
 
@@ -48,7 +48,7 @@ const Categories = () => {
         >
           <p className="type-caps-label mb-3">Shop</p>
           <h2 className="font-billboard text-4xl sm:text-5xl md:text-6xl text-foreground tracking-wide uppercase leading-none">
-            T-shirts, mugs &amp; caps
+            T-shirts, mugs &amp; hats
           </h2>
           <p className="font-body text-muted-foreground mt-4 text-base md:text-lg">
             Tees, drinkware, and lids — gear up or gift something that feels like the lake.

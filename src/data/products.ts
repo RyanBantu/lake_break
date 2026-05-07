@@ -3,13 +3,14 @@ import tshirtWarmSpot from "@/assets/tshirt-warm-spot.png";
 import tshirtBirdLegsLifestyle from "@/assets/tshirt-bird-legs-lifestyle.png";
 import tshirtBirdLegsBack from "@/assets/tshirt-bird-legs-back.png";
 import tshirtTrashyGulls from "@/assets/tshirt-dont-be-trashy-gulls.png";
-import capLakeBreakStudio from "@/assets/cap-lake-break-studio.png";
-import capLakeBreakCollage from "@/assets/cap-lake-break-collage.png";
-import capLakeBreakLifestyle from "@/assets/cap-lake-break-lifestyle.png";
+import hatSunsetPink from "@/assets/hat-sunset-pink.png";
+import hatLakeDayClassic from "@/assets/hat-lake-day-classic.png";
+import hatFloralEscape from "@/assets/hat-floral-escape.png";
+import hatCoastalMint from "@/assets/hat-coastal-mint.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
 
-export type ShopCategoryId = "t-shirts" | "mugs" | "caps";
+export type ShopCategoryId = "t-shirts" | "mugs" | "hats";
 
 export interface Product {
   id: string;
@@ -25,7 +26,7 @@ export interface Product {
   image: string;
   /** Extra images (detail page gallery) */
   gallery?: string[];
-  /** T-shirt sizes; omit for mugs and caps */
+  /** T-shirt sizes; omit for mugs and hats */
   sizes?: string[];
 }
 
@@ -38,8 +39,8 @@ export const CATEGORY_LABELS: Record<ShopCategoryId, { title: string; blurb: str
     title: "Mugs",
     blurb: "Ceramic mugs for campfire coffee, Father’s Day, and every morning that starts on the porch.",
   },
-  caps: {
-    title: "Caps",
+  hats: {
+    title: "Hats",
     blurb: "Mesh-back lids with rope detail and our heron patch — golf course to gas dock.",
   },
 };
@@ -84,16 +85,48 @@ export const PRODUCTS: Product[] = [
     sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {
-    id: "cap-lake-break",
-    slug: "lake-break-cap",
-    category: "caps",
-    name: "Lake Break Cap",
+    id: "hat-sunset-pink",
+    slug: "sunset-pink",
+    category: "hats",
+    name: "Sunset Pink",
     priceCents: 3200,
-    summary: "White & tan mesh-back hat — seafoam patch, rope brim, snap closure.",
+    summary: "Soft sunset pink front & brim — tan mesh, aqua rope, hex Lake Break patch.",
     description:
-      "Structured cap with a white foam front, tan mesh back, and braided rope at the brim. Hexagonal seafoam patch: heron in shades, L · B, and Lake Break type. LB hit on the side; snap closure and small woven tag at the back. One size fits most.",
-    image: capLakeBreakStudio,
-    gallery: [capLakeBreakStudio, capLakeBreakCollage, capLakeBreakLifestyle],
+      "Sunset Pink trucker: pink structured crown and brim, tan mesh back, light braided rope at the brim. Hexagonal Lake Break patch with heron, L · B, and snap closure — front & back detail views.",
+    image: hatSunsetPink,
+  },
+  {
+    id: "hat-lake-day-classic",
+    slug: "lake-day-classic",
+    category: "hats",
+    name: "Lake Day Classic",
+    priceCents: 3200,
+    summary: "White & tan classic — navy rope, hex patch, LB embroidery.",
+    description:
+      "Lake Day Classic trucker: crisp white front and brim, tan mesh, navy braided rope. Hex patch heron mark, side woven tag, snapback with LB embroidery — your everyday lake-break lid.",
+    image: hatLakeDayClassic,
+  },
+  {
+    id: "hat-floral-escape",
+    slug: "floral-escape",
+    category: "hats",
+    name: "Floral Escape",
+    priceCents: 3200,
+    summary: "White & tan with pink rope — floral hex patch and pink LB stitch.",
+    description:
+      "Floral Escape trucker: white crown and brim, tan mesh, pink rope accent. Hex patch with pink-yellow floral field, heron silhouette, Lake Break type — playful escape energy.",
+    image: hatFloralEscape,
+  },
+  {
+    id: "hat-coastal-mint",
+    slug: "coastal-mint",
+    category: "hats",
+    name: "Coastal Mint",
+    priceCents: 3200,
+    summary: "Mint green crown & brim — pink rope, beige mesh, mint LB embroidery.",
+    description:
+      "Coastal Mint trucker: mint foam front and brim, beige mesh back, bold pink braided rope. Hex Lake Break patch on white; mint LB hit on the mesh — coastal tee-time vibes.",
+    image: hatCoastalMint,
   },
   {
     id: "mug-bear-spot",
@@ -110,7 +143,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export function getCategoryFromParam(param: string | undefined): ShopCategoryId | null {
-  if (param === "t-shirts" || param === "mugs" || param === "caps") return param;
+  if (param === "t-shirts" || param === "mugs" || param === "hats") return param;
   return null;
 }
 

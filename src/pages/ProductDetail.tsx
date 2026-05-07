@@ -42,6 +42,7 @@ const ProductDetail = () => {
   const images = product.gallery?.length ? product.gallery : [product.image];
   const [activeImg, setActiveImg] = useState(0);
   const needsSize = Boolean(product.sizes?.length);
+  const comingSoon = category === "hats";
 
   const bumpQty = (delta: number) => {
     setQty((q) => Math.min(99, Math.max(1, q + delta)));
@@ -125,65 +126,84 @@ const ProductDetail = () => {
             <p className="font-body text-muted-foreground leading-relaxed text-base">{product.description}</p>
 
             <div className="mt-10 space-y-8 rounded-2xl border border-primary/20 bg-card/80 p-6 md:p-8">
-              {needsSize && (
-                <div className="space-y-3">
-                  <Label htmlFor="size" className="font-body text-xs font-bold uppercase tracking-[0.18em] text-foreground">
-                    Size
-                  </Label>
-                  <Select value={size} onValueChange={setSize}>
-                    <SelectTrigger id="size" className="h-12 rounded-lg border-primary/25 bg-background font-body">
-                      <SelectValue placeholder="Select size" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {product.sizes!.map((s) => (
-                        <SelectItem key={s} value={s} className="font-body">
-                          {s}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+              {comingSoon ? (
+                <>
+                  <Button
+                    type="button"
+                    variant="lakeOutline"
+                    size="lg"
+                    className="w-full h-12 rounded-lg text-[11px]"
+                    disabled
+                  >
+                    Coming soon
+                  </Button>
+                  <p className="font-body text-xs text-muted-foreground text-center leading-relaxed">
+                    Checkout opens soon — these hats will be available when orders go live.
+                  </p>
+                </>
+              ) : (
+                <>
+                  {needsSize && (
+                    <div className="space-y-3">
+                      <Label htmlFor="size" className="font-body text-xs font-bold uppercase tracking-[0.18em] text-foreground">
+                        Size
+                      </Label>
+                      <Select value={size} onValueChange={setSize}>
+                        <SelectTrigger id="size" className="h-12 rounded-lg border-primary/25 bg-background font-body">
+                          <SelectValue placeholder="Select size" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {product.sizes!.map((s) => (
+                            <SelectItem key={s} value={s} className="font-body">
+                              {s}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  )}
+
+                  <div className="space-y-3">
+                    <Label className="font-body text-xs font-bold uppercase tracking-[0.18em] text-foreground">Quantity</Label>
+                    <div className="flex items-center gap-4">
+                      <div className="flex items-center rounded-lg border border-primary/25 bg-background">
+                        <button
+                          type="button"
+                          className="flex h-12 w-12 items-center justify-center text-foreground hover:bg-white/5 rounded-l-lg transition-colors disabled:opacity-40"
+                          aria-label="Decrease quantity"
+                          onClick={() => bumpQty(-1)}
+                          disabled={qty <= 1}
+                        >
+                          <Minus className="h-4 w-4" />
+                        </button>
+                        <span className="min-w-[3rem] text-center font-body text-lg font-semibold tabular-nums">{qty}</span>
+                        <button
+                          type="button"
+                          className="flex h-12 w-12 items-center justify-center text-foreground hover:bg-white/5 rounded-r-lg transition-colors disabled:opacity-40"
+                          aria-label="Increase quantity"
+                          onClick={() => bumpQty(1)}
+                          disabled={qty >= 99}
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <div className="font-body text-sm text-muted-foreground">
+                        Subtotal{" "}
+                        <span className="text-foreground font-semibold tabular-nums">
+                          {formatPrice(product.priceCents * qty)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <Button type="button" variant="lake" size="lg" className="w-full h-12 rounded-lg text-[11px]" onClick={handleOrder}>
+                    Add to order
+                  </Button>
+                  <p className="font-body text-xs text-muted-foreground text-center leading-relaxed">
+                    Checkout opens soon — adding to order saves your selection for when cart goes live.
+                  </p>
+                </>
               )}
-
-              <div className="space-y-3">
-                <Label className="font-body text-xs font-bold uppercase tracking-[0.18em] text-foreground">Quantity</Label>
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center rounded-lg border border-primary/25 bg-background">
-                    <button
-                      type="button"
-                      className="flex h-12 w-12 items-center justify-center text-foreground hover:bg-white/5 rounded-l-lg transition-colors disabled:opacity-40"
-                      aria-label="Decrease quantity"
-                      onClick={() => bumpQty(-1)}
-                      disabled={qty <= 1}
-                    >
-                      <Minus className="h-4 w-4" />
-                    </button>
-                    <span className="min-w-[3rem] text-center font-body text-lg font-semibold tabular-nums">{qty}</span>
-                    <button
-                      type="button"
-                      className="flex h-12 w-12 items-center justify-center text-foreground hover:bg-white/5 rounded-r-lg transition-colors disabled:opacity-40"
-                      aria-label="Increase quantity"
-                      onClick={() => bumpQty(1)}
-                      disabled={qty >= 99}
-                    >
-                      <Plus className="h-4 w-4" />
-                    </button>
-                  </div>
-                  <div className="font-body text-sm text-muted-foreground">
-                    Subtotal{" "}
-                    <span className="text-foreground font-semibold tabular-nums">
-                      {formatPrice(product.priceCents * qty)}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <Button type="button" variant="lake" size="lg" className="w-full h-12 rounded-lg text-[11px]" onClick={handleOrder}>
-                Add to order
-              </Button>
-              <p className="font-body text-xs text-muted-foreground text-center leading-relaxed">
-                Checkout opens soon — adding to order saves your selection for when cart goes live.
-              </p>
             </div>
 
             <Link

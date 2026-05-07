@@ -17,7 +17,7 @@ const Footer = () => {
               Sun soaked days & campfire nights
             </p>
             <p className="font-body text-sm text-muted-foreground mt-4 leading-relaxed max-w-sm">
-              T-shirts, mugs, and caps for barefoot days, boardwalk nights, and every shade of summer.
+              T-shirts, mugs, and hats for barefoot days, boardwalk nights, and every shade of summer.
             </p>
           </div>
 
@@ -35,8 +35,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/shop/caps" className="hover:text-primary transition-colors">
-                  Caps
+                <Link to="/shop/hats" className="hover:text-primary transition-colors">
+                  Hats
                 </Link>
               </li>
             </ul>
@@ -45,6 +45,11 @@ const Footer = () => {
           <div className="md:col-span-2">
             <h4 className="font-body text-xs font-bold tracking-[0.12em] uppercase text-primary/70 mb-5">Company</h4>
             <ul className="space-y-3 font-body text-sm text-foreground/75">
+              <li>
+                <Link to="/about" className="hover:text-primary transition-colors">
+                  About us
+                </Link>
+              </li>
               <li>
                 <Link to="/#contact" className="hover:text-primary transition-colors">
                   Contact

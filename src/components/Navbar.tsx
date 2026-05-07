@@ -6,6 +6,7 @@ import LakeBreakLogo from "@/components/LakeBrakeLogo";
 
 const navLinks = [
   { label: "Shop", to: "/#shop" },
+  { label: "About", to: "/about" },
   { label: "Contact", to: "/#contact" },
 ];
 

@@ -4,7 +4,8 @@ import tshirtImg from "@/assets/category-clothing.jpg";
 import tshirtWarmSpotImg from "@/assets/tshirt-warm-spot.png";
 import mugProductImg from "@/assets/mug-fathers-day-product.png";
 import mugLifestyleImg from "@/assets/mug-fathers-day-lifestyle.png";
-import hatLakeDayClassicImg from "@/assets/hat-lake-day-classic.png";
+import hatLifestyleCoupleImg from "@/assets/hat-lifestyle-couple-lake-course.png";
+import hoodieDustyRoseImg from "@/assets/hoodie-dusty-rose.png";
 
 const MotionLink = motion(Link);
 
@@ -27,8 +28,15 @@ const categories = [
     slug: "HATS",
     name: "Hats",
     description: "Mesh-back lids for the course, the dock, and the drive home",
-    image: hatLakeDayClassicImg,
+    image: hatLifestyleCoupleImg,
     to: "/shop/hats",
+  },
+  {
+    slug: "HOODIES",
+    name: "Hoodies",
+    description: "Midweight fleece with heron hex back prints — pier mornings to bonfire nights",
+    image: hoodieDustyRoseImg,
+    to: "/shop/hoodies",
   },
 ];
 
@@ -48,14 +56,14 @@ const Categories = () => {
         >
           <p className="type-caps-label mb-3">Shop</p>
           <h2 className="font-billboard text-4xl sm:text-5xl md:text-6xl text-foreground tracking-wide uppercase leading-none">
-            T-shirts, mugs &amp; hats
+            Tees, mugs, hats &amp; hoodies
           </h2>
           <p className="font-body text-muted-foreground mt-4 text-base md:text-lg">
-            Tees, drinkware, and lids — gear up or gift something that feels like the lake.
+            Tees, drinkware, lids, and fleece — gear up or gift something that feels like the lake.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px md:gap-0 max-w-6xl mx-auto bg-primary/20 md:bg-transparent">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px md:gap-0 max-w-6xl mx-auto bg-primary/20 md:bg-transparent">
           {categories.map((cat, i) => (
             <MotionLink
               key={cat.name}
@@ -66,13 +74,32 @@ const Categories = () => {
               transition={{ duration: 0.45, delay: i * 0.06 }}
               className="group relative overflow-hidden aspect-[3/4] md:aspect-[4/5] bg-card cursor-pointer md:border md:border-primary/25 block"
             >
-              <img
-                src={cat.image}
-                alt={cat.name}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              {cat.secondaryImage ? (
+                <div className="absolute inset-0 grid grid-rows-2 bg-[hsl(220_14%_8%)]">
+                  {[cat.image, cat.secondaryImage].map((src, imageIndex) => (
+                    <div key={src} className="relative overflow-hidden">
+                      <img
+                        src={src}
+                        alt={imageIndex === 0 ? `${cat.name} lifestyle reference 1` : `${cat.name} lifestyle reference 2`}
+                        className="h-full w-full object-contain object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                  loading="lazy"
+                />
+              )}
+              {cat.secondaryImage ? (
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 md:h-32 bg-gradient-to-t from-black/95 via-black/70 to-transparent" />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              )}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 z-10">
                 <p className="font-billboard text-4xl md:text-5xl text-[hsl(40_30%_96%)] tracking-wide leading-none">
                   {cat.slug}

@@ -7,10 +7,15 @@ import hatSunsetPink from "@/assets/hat-sunset-pink.png";
 import hatLakeDayClassic from "@/assets/hat-lake-day-classic.png";
 import hatFloralEscape from "@/assets/hat-floral-escape.png";
 import hatCoastalMint from "@/assets/hat-coastal-mint.png";
+import hatLifestyleGolfCourse from "@/assets/hat-lifestyle-golf-course.png";
+import hatLifestyleLakeCourse from "@/assets/hat-lifestyle-lake-course.png";
+import hatLifestylePinkLakeCourse from "@/assets/hat-lifestyle-pink-lake-course.png";
 import mugDetail from "@/assets/mug-fathers-day-product.png";
 import mugLifestyle from "@/assets/mug-fathers-day-lifestyle.png";
+import hoodieDustyRose from "@/assets/hoodie-dusty-rose.png";
+import hoodieSage from "@/assets/hoodie-sage.png";
 
-export type ShopCategoryId = "t-shirts" | "mugs" | "hats";
+export type ShopCategoryId = "t-shirts" | "mugs" | "hats" | "hoodies";
 
 export interface Product {
   id: string;
@@ -42,6 +47,10 @@ export const CATEGORY_LABELS: Record<ShopCategoryId, { title: string; blurb: str
   hats: {
     title: "Hats",
     blurb: "Mesh-back lids with rope detail and our heron patch — golf course to gas dock.",
+  },
+  hoodies: {
+    title: "Hoodies",
+    blurb: "Midweight fleece with our heron hex and hand-drawn florals — pier mornings to bonfire nights.",
   },
 };
 
@@ -94,6 +103,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Sunset Pink trucker: pink structured crown and brim, tan mesh back, light braided rope at the brim. Hexagonal Lake Break patch with heron, L · B, and snap closure — front & back detail views.",
     image: hatSunsetPink,
+    gallery: [hatSunsetPink, hatLifestylePinkLakeCourse],
   },
   {
     id: "hat-lake-day-classic",
@@ -105,6 +115,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Lake Day Classic trucker: crisp white front and brim, tan mesh, navy braided rope. Hex patch heron mark, side woven tag, snapback with LB embroidery — your everyday lake-break lid.",
     image: hatLakeDayClassic,
+    gallery: [hatLakeDayClassic, hatLifestyleLakeCourse],
   },
   {
     id: "hat-floral-escape",
@@ -116,6 +127,7 @@ export const PRODUCTS: Product[] = [
     description:
       "Floral Escape trucker: white crown and brim, tan mesh, pink rope accent. Hex patch with pink-yellow floral field, heron silhouette, Lake Break type — playful escape energy.",
     image: hatFloralEscape,
+    gallery: [hatFloralEscape, hatLifestyleLakeCourse],
   },
   {
     id: "hat-coastal-mint",
@@ -127,6 +139,31 @@ export const PRODUCTS: Product[] = [
     description:
       "Coastal Mint trucker: mint foam front and brim, beige mesh back, bold pink braided rope. Hex Lake Break patch on white; mint LB hit on the mesh — coastal tee-time vibes.",
     image: hatCoastalMint,
+    gallery: [hatCoastalMint, hatLifestyleGolfCourse],
+  },
+  {
+    id: "hoodie-dusty-rose",
+    slug: "dusty-rose",
+    category: "hoodies",
+    name: "Dusty Rose Hoodie",
+    priceCents: 6800,
+    summary: "Midweight fleece in dusty rose — translucent front logo, full floral hex back print.",
+    description:
+      "Dusty Rose midweight fleece with a relaxed fit. Translucent Lake Break hex on the chest (2.14\" wide, ~65% opacity) and an 11\" × 13\" multi-color back print: heron hex framed in hand-drawn hibiscus and tropical leaves. Sundown on the dock energy.",
+    image: hoodieDustyRose,
+    sizes: ["S", "M", "L", "XL", "2XL"],
+  },
+  {
+    id: "hoodie-sage",
+    slug: "sage",
+    category: "hoodies",
+    name: "Sage Hoodie",
+    priceCents: 6800,
+    summary: "Soft sage fleece — heron hex chest hit, full floral hex back print.",
+    description:
+      "Sage midweight fleece, relaxed fit. Tonal Lake Break heron hex on the chest and an 11\" × 13\" floral back print: heron framed in coral-and-sage hibiscus. Made for cool mornings on the pier and golden-hour drives home.",
+    image: hoodieSage,
+    sizes: ["S", "M", "L", "XL", "2XL"],
   },
   {
     id: "mug-bear-spot",
@@ -143,7 +180,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export function getCategoryFromParam(param: string | undefined): ShopCategoryId | null {
-  if (param === "t-shirts" || param === "mugs" || param === "hats") return param;
+  if (param === "t-shirts" || param === "mugs" || param === "hats" || param === "hoodies") return param;
   return null;
 }
 

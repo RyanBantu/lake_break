@@ -33,6 +33,7 @@ const ProductDetail = () => {
 
   const [qty, setQty] = useState(1);
   const [size, setSize] = useState<string>("");
+  const [activeImg, setActiveImg] = useState(0);
 
   if (!category || !slug || !product) {
     return <Navigate to="/" replace />;
@@ -40,7 +41,7 @@ const ProductDetail = () => {
 
   const meta = CATEGORY_LABELS[category];
   const images = product.gallery?.length ? product.gallery : [product.image];
-  const [activeImg, setActiveImg] = useState(0);
+  const isPrimaryActive = images[activeImg] === product.image;
   const needsSize = Boolean(product.sizes?.length);
   const comingSoon = category === "hats";
 
@@ -89,7 +90,11 @@ const ProductDetail = () => {
               <img
                 src={images[activeImg]}
                 alt={product.name}
-                className="h-full w-full object-contain object-center bg-[hsl(220_10%_12%)] p-4 md:p-8"
+                className={
+                  isPrimaryActive
+                    ? "h-full w-full object-contain object-center bg-[hsl(220_10%_12%)] p-4 md:p-8"
+                    : "h-full w-full object-cover object-center"
+                }
               />
             </div>
             {images.length > 1 && (
